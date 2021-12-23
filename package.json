@@ -3,16 +3,16 @@
     "to-camel-case": "^1.0.0"
   },
   "description": "react native css",
-  "homepage": "https://github.com/xuyazhong/react-native-css",
+  "homepage": "https://gitee.com/xuyazhong/react-native-css",
   "keywords": [
     "react-native",
     "react-native-css"
   ],
   "main": "./index.js",
-  "name": "react-native-css",
+  "name": "rncss",
   "repository": {
     "type": "git",
-    "url": "git+https://github.com/xuyazhong/react-native-css.git"
+    "url": "git+https://gitee.com/xuyazhong/react-native-css.git"
   },
   "version": "0.0.1"
 }

@@ -19,14 +19,12 @@ const wlStyle = (obj) => {
       delete obj[key];
       continue;
     }
-    if (key.indexOf('-') !== -1) {
-      let new_key = toCamelCase(key);
-      obj[new_key] = v;
+    if (key.indexOf('-') !== -1 || key.indexOf('_') !== -1) {
+      obj[toCamelCase(key)] = v;
       delete obj[key];
       continue;
     }
   }
-
   for (let key in obj) {
     let v = obj[key];
     if (allArray.indexOf(key) === -1) {

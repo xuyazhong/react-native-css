@@ -35,6 +35,9 @@ const wlStyle = (obj) => {
       let newV = v.replace(/px$/, '');
       obj[key] = newV;
     }
+    if (/^[0-9]+%$/.test(v)) {
+      continue;
+    }
     if (numberArr.indexOf(key) !== -1) {
       if (Number(obj[key])) {
         obj[key] = Number(obj[key]);

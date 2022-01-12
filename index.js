@@ -1,6 +1,6 @@
 import toCamelCase from 'to-camel-case';
 
-const wlStyle = (obj) => {
+const wlStyle = (obj, type) => {
   if (obj === undefined) {
     return {};
   }
@@ -47,6 +47,18 @@ const wlStyle = (obj) => {
       }
     }
   }
+  switch (type) {
+    case 'Image': {
+      for (const key in obj) {
+        if (['borderBottomColor', 'borderBottomWidth', 'borderEndColor', 'borderLeftColor', 'borderLeftWidth', 'borderRightColor', 'borderRightWidth', 'borderStartColor', 'borderStyle', 'borderTopColor', 'borderTopWidth'].indexOf(key) !== -1) {
+          console.log('delete', key);
+          delete obj[key];
+        }
+      }
+      break;
+    }
+  }
   return obj;
 }
+
 export default wlStyle;

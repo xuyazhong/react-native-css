@@ -25,8 +25,21 @@ const wlStyle = (obj, type) => {
       continue;
     }
   }
+  if (obj.hasOwnProperty('display') && obj.display === 'flex') {
+    if (!obj.hasOwnProperty('flexDirection')) {
+      obj.flexDirection = 'row';
+      // if (!obj.hasOwnProperty('alignItems')) {
+      //   console.log("none alignItems");
+      //   obj.alignItems = 'flex-end';
+      // }
+    }
+  }
   for (let key in obj) {
     let v = obj[key];
+    if (key === 'lineHeight' && type !== 'Text') {
+      delete obj[key]
+      continue;
+    }
     if (allArray.indexOf(key) === -1) {
       delete obj[key];
       continue;

@@ -29,16 +29,31 @@ const wlStyle = (style, type) => {
   if (obj.hasOwnProperty('display') && obj.display === 'flex') {
     if (!obj.hasOwnProperty('flexDirection')) {
       obj.flexDirection = 'row';
-      // if (!obj.hasOwnProperty('alignItems')) {
-      //   console.log("none alignItems");
-      //   obj.alignItems = 'flex-end';
-      // }
     }
   }
   for (let key in obj) {
     let v = obj[key];
     if (key === 'lineHeight' && type !== 'Text') {
       delete obj[key]
+      continue;
+    }
+    if (key === 'fontWeight') {
+      obj[key] = `${v}`;
+      continue;
+    }
+    if (key === 'position') {
+      if (['absolute', 'relative'].indexOf(v) > -1) {
+        console.log('position', v);
+      } else {
+        console.log('delete position', v);
+        delete obj[key];
+      }
+      continue;
+    }
+    if (key === 'display') {
+      if (['flex', 'none'].indexOf(v) === -1) {
+        delete obj[key];
+      }
       continue;
     }
     if (allArray.indexOf(key) === -1) {

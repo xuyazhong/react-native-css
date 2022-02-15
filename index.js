@@ -16,6 +16,10 @@ const wlStyle = (style, type) => {
       delete obj[key];
       continue;
     }
+    if (v === 'auto') {
+      obj[key] = 100;
+      continue;
+    }
     if (v === 'px') {
       delete obj[key];
       continue;

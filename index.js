@@ -87,6 +87,10 @@ const wlStyle = (style, type) => {
           delete obj[key];
         }
       }
+      if (!obj['height'] && !obj['width']) {
+        obj['width'] = 100;
+        obj['height'] = 100;
+      }
       break;
     }
   }

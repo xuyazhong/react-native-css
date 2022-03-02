@@ -5,7 +5,7 @@
   "description": "wlos-style",
   "homepage": "https://github.com/xuyazhong/react-native-css",
   "keywords": [
-	"wlos-style",
+    "wlos-style",
     "react-native",
     "react-native-css"
   ],
@@ -15,7 +15,7 @@
     "type": "git",
     "url": "git+https://github.com/xuyazhong/react-native-css.git"
   },
-  "version": "0.1.3",
+  "version": "0.1.4",
   "bugs": {
     "url": "https://github.com/xuyazhong/react-native-css/issues"
   },

@@ -24,6 +24,10 @@ const wlStyle = (style, type) => {
       delete obj[key];
       continue;
     }
+    if (v === '0%') {
+      delete obj[key];
+      continue
+    }
     if (key.indexOf('-') !== -1 || key.indexOf('_') !== -1) {
       obj[toCamelCase(key)] = v;
       delete obj[key];

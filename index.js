@@ -51,11 +51,10 @@ const wlStyle = (style, type) => {
     }
     if (key === 'position') {
       if (['absolute', 'relative'].indexOf(v) > -1) {
-        console.log('position', v);
+        continue;
       } else if (v === "fixed") {
         obj[key] = "absolute";  //fixed替换成absolute
       } else {
-        console.log('delete position', v);
         delete obj[key];
       }
       continue;
@@ -78,7 +77,6 @@ const wlStyle = (style, type) => {
       continue;
     }
     if (numberArr.indexOf(key) !== -1) {
-      console.log(obj[key], Number(obj[key]));
       const num = Number(obj[key]);
       if (num || num === 0) {
         obj[key] = num;
